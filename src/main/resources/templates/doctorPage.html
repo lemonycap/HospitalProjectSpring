@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Doctor page</title>
+</head>
+<body>
+<p th:text = "#{doctor.page}"></p>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" th:value="#{logout}"/>
+</form>
+<p th:utext= "#{greeting}"></p><p th:text="${doctor.name} +' ' + ${doctor.surname}"></p>
+<p th:utext = "#{patients}"> </p>
+<div th:if ="${!doctorsPatients.isEmpty()}">
+    <table border = "1">
+        <tr>
+            <th th:text="#{name}">  </th>
+            <th th:text="#{surname}">  </th>
+            <th  th:text="#{prescriptionHistory}"></th>
+            <th  th:text ="#{diagnosis}">  </th>
+            <th  th:text ="#{prescriptions}">  </th>
+        </tr>
+        <tr th:each="patient : ${doctorsPatients}">
+            <td th:utext="${patient.patient.getName()}">..</td>
+            <td th:utext="${patient.patient.getSurname()}">..</td>
+            <td>
+                <div th:each = "prescription : ${patient.getPrescriptionHistory()}">
+                    <p th:text = "${prescription.getName()}"></p>
+                </div>
+            </td>
+            <td>
+                <div th:if = "${patient.diagnosis} ==  null">
+                    <form method="post" th:action="@{/doctor/establishDiagnosis}" style="display:inline;">
+                        <input  type = "hidden" name="id" th:value="${patient.patient.id}"/>
+                        <input type="submit" th:value="#{establishDiagnosis}"/>
+                    </form>
+                </div>
+                <div th:unless = "${patient.diagnosis} == null">
+                    <p th:text= "${patient.diagnosis.getName()}"></p>
+                </div>
+            </td>
+            <td>
+                <div th:if = "${patient.getCurrentPrescriptionsList().isEmpty() and patient.getDiagnosis() != null}">
+                    <form method="post" th:action="@{/doctor/makePrescriptions}" style="display:inline;">
+                        <input  type = "hidden" name="id" th:value="${patient.patient.id}"/>
+                        <input type="submit" th:value="#{makePrescriptions}"/>
+                    </form>
+                </div>
+                <div th:unless = "${patient.getCurrentPrescriptionsList().isEmpty()}">
+                    <div th:each = "prescription : ${patient.getCurrentPrescriptionsList()}">
+                        <p th:text = "${prescription.getName()}"></p>
+                        <form method="post" th:action="@{/doctor/doPrescription}" style="display:inline;">
+                            <input  type = "hidden" name="id" th:value="${prescription.id}"/>
+                            <input  type = "hidden" name="patientId" th:value="${patient.patient.id}"/>
+                            <input type="submit" th:value="#{doPrescription}"/>
+                        </form>
+                    </div>
+                </div>
+            </td>
+            <td>
+             <div th:if = "${patient.getDiagnosis() != null}">
+            <form method="post" th:action="@{/doctor/releasePatient}" style="display:inline;">
+                <input  type = "hidden" name="patientId" th:value="${patient.patient.id}"/>
+                <input type="submit" th:value="#{releasePatient}"/>
+            </form>
+             </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div th:unless="${!doctorsPatients.isEmpty()}">
+    <p th:text="#{noPatients}"> </p>
+</div>
+<div th:if = "${doctorsPatients.size() < 5}">
+    <form method="post" th:action="@{/doctor/findPatients}" style="display:inline;">
+        <input  type = "hidden" name="id" th:value="${doctor.id}"/>
+        <input type="submit" th:value="#{findPatients}"/>
+    </form>
+</div>
+<div th:unless ="${doctorsPatients.size() < 5}">
+    <p th:text = "#{maxNumberOfPatients}"></p>
+</div>
+<button th:text = "#{home}" onclick="location.href='/'"></button>
+</body>
+</html>

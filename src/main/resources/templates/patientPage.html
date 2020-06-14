@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Patient page</title>
+</head>
+<body>
+<p th:text = "#{patient.page}"></p>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" th:value="#{logout}"/>
+</form>
+<p th:utext= "#{greeting}"></p><p th:text="${patient.name} +' ' + ${patient.surname}"></p>
+<div th:if = "${patientData.getPatientStatus() == 1}">
+<h4 th:text = "#{patient.doctor}"></h4>
+<div th:if = "${patientData.getDoctor() != null}">
+  <p th:text = "${patientData.getDoctor().getName() + ' ' + patientData.getDoctor().getSurname()}"></p>
+</div>
+<div th:unless=  "${patientData.getDoctor() != null}">
+   <p th:text = "#{patient.noDoctor}"> </p>
+</div>
+    <h4 th:text = "#{patient.nurse}"></h4>
+<div th:if = "${patientData.getNurse() != null}">
+    <p th:text = "${patientData.getNurse().getName() + ' ' + patientData.getNurse().getSurname()}"></p>
+</div>
+<div th:unless=  "${patientData.getNurse() != null}">
+    <p th:text = "#{patient.noNurse}"> </p>
+</div>
+    <h4 th:text = "#{patient.diagnosis}"></h4>
+<div th:if = "${patientData.getDiagnosis() != null}">
+    <p th:text = "${patientData.getDiagnosis().getName()}" ></p>
+</div>
+<div th:unless=  "${patientData.getDiagnosis() != null}">
+    <p th:text = "#{patient.noDiagnosis}"> </p>
+</div>
+    <h4 th:text = "#{patient.history}"></h4>
+<div th:if = "${!patientData.getPrescriptionHistory().isEmpty()}">
+    <div th:each = "prescription: ${patientData.getPrescriptionHistory()}">
+        <p th:text = "${prescription.getName()}"></p>
+    </div>
+</div>
+    <h4 th:text = "#{patient.curPrescr}"></h4>
+<div th:if = "${!patientData.getCurrentPrescriptionsList().isEmpty()}">
+    <div th:each = "prescription: ${patientData.getCurrentPrescriptionsList()}">
+        <p th:text = "${prescription.getName()}"></p>
+    </div>
+</div>
+<div th:unless=  "${!patientData.getCurrentPrescriptionsList().isEmpty()}">
+    <p th:text = "#{patient.noPrescriptions}"> </p>
+</div>
+</div>
+<div th:if = "${patientData.getPatientStatus() == 0}">
+    <h4 th:text = "#{patient.diagnosis}"></h4>
+    <p th:text = "${patientData.getDiagnosis().getName()}" ></p>
+    <div th:if = "${patientData.getCurrentPrescriptionsList().isEmpty()}">
+        <h4 th:text = "#{patient.leftPrescr}"> </h4>
+    </div>
+    <h4 th:text = "#{patient.prescriptions}"></h4>
+    <div th:unless = "${patientData.getCurrentPrescriptionsList().isEmpty()}">
+        <div th:each = "prescription: ${patientData.getCurrentPrescriptionsList()}">
+            <p th:text = "${prescription.getName()}"></p>
+        </div>
+    </div>
+    <p th:text = "#{patient.released}"> </p>
+</div>
+<button  th:text = "#{home}" onclick="location.href='/'">Home</button>
+</body>
+</html>

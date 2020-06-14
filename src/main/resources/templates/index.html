@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<button  th:text = "#{registration}" onclick="location.href='/registration'"></button>
+<button  th:text = "#{doctor.profile}" onclick="location.href='/doctor'"> </button>
+<button  th:text = "#{nurse.profile}" onclick="location.href='/nurse'"></button>
+<button  th:text = "#{patient.profile}" onclick="location.href='/patient'"></button>
+<a href = "?language=en" th:value="en" th:text = "#{language.eng}"></a>
+<a href = "?language=ru" th:value="ru" th:text = "#{language.ru}"></a>
+</body>
+</html>
