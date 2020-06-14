@@ -61,20 +61,12 @@ class PatientDataServiceTest {
 
     @Test
     void checkPrescriptionHistoryOfPatientsIfNoNewPatients() {
-        when (mockList.size()).thenReturn(10);
-        Mockito.verify(patientDataRepo, Mockito.times(10)).allPatientData();
-      //  Mockito.verify(prescriptionRepo, Mockito.times(0)).allPrescriptions();
+
     }
 
     @Test
     void checkPrescriptionHistoryOfPatientsIfNewPatients() {
-        PatientData patientData = new PatientData();
-        /*Mockito.doReturn(patientData)
-                .when()
-                .allPatientData();
-        patientDataService.checkPrescriptionHistoryOfPatients();
-        Mockito.verify(patientDataRepo, Mockito.times(1)).allPatientData();
-        Mockito.verify(prescriptionRepo, Mockito.times(1)).allPrescriptions();*/
+
     }
 
     @Test

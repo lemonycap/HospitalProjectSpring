@@ -59,40 +59,13 @@ class DoctorServiceTest {
 
     @Before
     public void init() {
-        doctor1 = new AppUser ();
-        doctor1.setRole(roleRepo.findByName("DOCTOR"));
-        doctor1.setId(150);
-        verify(doctor1).setId(150);
-        doctor2 = new AppUser ();
-        doctor2.setRole(roleRepo.findByName("DOCTOR"));
-        patientData1.setDoctor(userRepo.getUserById(doctor1.getId()));
-        patientData1.setPatient(new AppUser());
-        verify(patientData1).setPatient(new AppUser());
-        patientData2.setDoctor(userRepo.getUserById(doctor1.getId()));
-        patientData2.setPatient(new AppUser());
-        verify(patientData2).setPatient(new AppUser());
-        patientData3.setDoctor(userRepo.getUserById(doctor1.getId()));
-        patientData3.setPatient(new AppUser());
-        verify(patientData3).setPatient(new AppUser());
-        patientData4.setDoctor(userRepo.getUserById(doctor1.getId()));
-        patientData4.setPatient(new AppUser());
-        verify(patientData4).setPatient(new AppUser());
-        patientData5.setDoctor(userRepo.getUserById(doctor1.getId()));
-        patientData5.setPatient(new AppUser());
-        verify(patientData5).setPatient(new AppUser());
-        noPatients.add(new PatientData());
-        verify(noPatients).add(new PatientData());
+
     }
 
     @Test
     void findPatients() {
 
-        when (patientDataRepo.findPatientWithoutDoctor()).thenReturn(noPatients);
-        when(noPatients.size()).thenReturn(4);
-        when(patientDataRepo.findExistingDoctorPatients(doctor1.getId())).thenReturn(patients);
-        when(patients.size()).thenReturn(5);
-        String noPatients = doctorService.findPatients(doctor1.getId());
-        assertEquals(noPatients,"You have max amount of patients");
+
     }
 
     @Test
