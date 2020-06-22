@@ -10,6 +10,8 @@ import com.example.demo.repos.RoleRepo;
 import com.example.demo.repos.UserRepo;
 import com.example.demo.utils.Container;
 import com.example.demo.utils.RandomNumber;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +28,7 @@ import java.util.Set;
 @Service
 @Transactional
 public class PatientDataService {
+    private static final Logger logger = LogManager.getLogger(PatientDataService.class);
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -39,12 +42,14 @@ public class PatientDataService {
     PrescriptionRepo prescriptionRepo;
 
     public void refreshPatients() {
+        logger.info("adding all patient info to patient data table");
         Role role = roleRepo.findByName("PATIENT");
         List<AppUser> patients = userRepo.getUserByRole(role);
 
         for (AppUser patient:patients) {
             PatientData user = patientDataRepo.getPatientById(patient.getId());
             if (user == null) {
+                logger.info("info about this patient doesn't exist yet, adding this info");
                insertWithQuery(patient);
             }
         }
@@ -52,15 +57,18 @@ public class PatientDataService {
     }
 
     public void checkPrescriptionHistoryOfPatients() {
+        logger.info("checking if patient has prescription history");
         List<PatientData> patientDataList = patientDataRepo.allPatientData();
         for (int i = 0; i < patientDataList.size(); i++) {
             if (patientDataList.get(i).getPrescriptionHistory().isEmpty()) {
+                logger.info("creating prescription history");
                 createHistoryOfPrescriptions(patientDataList.get(i));
             }
         }
     }
 
     public void createHistoryOfPrescriptions(PatientData patient) {
+        logger.info("prescription history for" + patient.getPatient().getName() + patient.getPatient().getSurname());
         List<Prescription> allPrescriptions = prescriptionRepo.allPrescriptions();
         int numberOfPastPrescriptions = RandomNumber.randNumber(Container.MIN_NUMBER_OF_PRESCRIPTIONS,Container.MAX_NUMBER_OF_PRESCRIPTIONS);
         Set<Prescription> prescriptionHistory = new HashSet<>();
@@ -70,14 +78,16 @@ public class PatientDataService {
             prescriptionHistory.add(allPrescriptions.get(prescriptiontoAdd));
         }
         patient.setPrescriptionHistory(prescriptionHistory);
+        logger.info("prescription history successfully created");
     }
 
     public void insertWithQuery(AppUser person) {
+            logger.info("adding new patient transaction");
             entityManager.joinTransaction();
             entityManager.createNativeQuery("INSERT INTO patient_data (patient_id) VALUES (?)")
                     .setParameter(1, person.getId())
                     .executeUpdate();
-
+            logger.info("adding new patient transaction successfully performed");
     }
 
 }

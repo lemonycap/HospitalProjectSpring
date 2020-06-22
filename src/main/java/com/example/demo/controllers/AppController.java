@@ -43,11 +43,13 @@ public class AppController {
 
     @GetMapping("/login")
     public String login() {
+        logger.info("redirecting to login page");
         return "login";
     }
 
     @GetMapping("/registration")
     public String registration() {
+        logger.info("redirecting to registration page");
         return "registration";
     }
 
@@ -72,6 +74,7 @@ public class AppController {
 
     @GetMapping ("/doctor")
     public String doctor(Authentication authentication, Map<String, Object> model){
+        logger.info("redirecting to doctor page");
         String name = authentication.getName();
         AppUser doctor = userRepo.getUserByUsername(name);
         model.put("doctor",doctor);
@@ -81,6 +84,7 @@ public class AppController {
     }
     @GetMapping ("/nurse")
     public String nurse(Authentication authentication, Map<String, Object> model) {
+        logger.info("redirecting to nurse page");
         String name = authentication.getName();
         AppUser nurse = userRepo.getUserByUsername(name);
         model.put("nurse",nurse);
@@ -90,6 +94,7 @@ public class AppController {
     }
     @GetMapping("/patient")
     public String patient(Authentication authentication, Map<String, Object> model) {
+        logger.info("redirecting to patient page");
         String name = authentication.getName();
         AppUser patient = userRepo.getUserByUsername(name);
         model.put("patient",patient);
@@ -99,6 +104,7 @@ public class AppController {
     }
     @GetMapping("/403")
     public String Error() {
+        logger.info("redirecting to error page");
         return "403";
     }
 

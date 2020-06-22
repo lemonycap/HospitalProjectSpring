@@ -34,6 +34,7 @@ public class DoctorService {
     MedicineListRepo medicineListRepo;
 
     public  String findPatients(int doctorId) {
+        logger.info("find patients for doctor");
         List<PatientData> patientsWithoutDoctor = patientDataRepo.findPatientWithoutDoctor();
         if (patientsWithoutDoctor.size() == 0) {
             logger.info("No patients need doctor right now");
@@ -62,6 +63,7 @@ public class DoctorService {
         int number = RandomNumber.randNumber(0, diagnoses.size() - 1);
         logger.debug("number of diagnosis" + number);
         patient.setDiagnosis(diagnoses.get(number));
+        logger.info("diagnosis established");
     }
 
     public void makePrescriptions(int  patientId) {
@@ -91,6 +93,7 @@ public class DoctorService {
             newPrescriptions.add(operations.get(number));
         }
         patient.setCurrentPrescriptionsList(newPrescriptions);
+        logger.info("prescriptions made");
     }
 
     public List<Prescription> prepareActivePrescriptions(Set<Prescription> pastPrescriptions, List<Prescription> listToPrepare) {
@@ -106,7 +109,7 @@ public class DoctorService {
     public void doPrescription(int id, int prescriptionId) {
         logger.info("performing prescriptions");
         PatientData patient = patientDataRepo.getPatientById(id);
-        logger.debug("patient " + patient.getPatient().getName() + patient.getPatient().getSurname());
+        logger.info("patient " + patient.getPatient().getName() + patient.getPatient().getSurname());
         Prescription prescription = prescriptionRepo.findPrescriptionById(prescriptionId);
         if (prescription.getPrescriptionClass().equals(Container.PRESCRIPTION_MEDICINE)) {
             logger.info("performing medicine transaction");
@@ -127,7 +130,7 @@ public class DoctorService {
     public void releasePatient(int id) {
         logger.info("releasing patient");
         PatientData patient = patientDataRepo.getPatientById(id);
-        logger.debug(patient.getPatient().getName() + patient.getPatient().getSurname());
+        logger.info(patient.getPatient().getName() + patient.getPatient().getSurname());
         boolean abilityToRelease = true;
         for(Prescription prescription: patient.getCurrentPrescriptionsList()) {
             if(prescription.getPrescriptionClass().equals("operations")) {
