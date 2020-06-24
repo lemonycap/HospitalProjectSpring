@@ -95,3 +95,95 @@
 2020-ΠΈΡΠ½.-22 16:09:39.534 INFO  [http-nio-8077-exec-6] c.e.d.c.AppController - redirecting to doctor page
 2020-ΠΈΡΠ½.-22 16:09:41.298 INFO  [http-nio-8077-exec-8] c.e.d.c.AppController - redirecting to login page
 2020-ΠΈΡΠ½.-22 16:09:49.500 INFO  [http-nio-8077-exec-1] c.e.d.c.AppController - redirecting to nurse page
+2020-θών.-24 18:09:28.961 INFO  [restartedMain] c.e.d.DemoApplication - Starting DemoApplication on DESKTOP-HD45276 with PID 3924 (F:\GitRepository\Study\demo\target\classes started by Liza in F:\GitRepository\Study\demo)
+2020-θών.-24 18:09:28.964 INFO  [restartedMain] c.e.d.DemoApplication - No active profile set, falling back to default profiles: default
+2020-θών.-24 18:09:29.062 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-θών.-24 18:09:29.063 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-θών.-24 18:09:30.624 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-θών.-24 18:09:30.891 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 145ms. Found 6 JPA repository interfaces.
+2020-θών.-24 18:09:32.424 INFO  [restartedMain] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8077 (http)
+2020-θών.-24 18:09:32.436 INFO  [restartedMain] o.a.c.c.StandardService - Starting service [Tomcat]
+2020-θών.-24 18:09:32.437 INFO  [restartedMain] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-θών.-24 18:09:32.604 INFO  [restartedMain] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2020-θών.-24 18:09:32.605 INFO  [restartedMain] o.s.w.c.ContextLoader - Root WebApplicationContext: initialization completed in 3540 ms
+2020-θών.-24 18:09:32.887 INFO  [restartedMain] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-θών.-24 18:09:33.012 INFO  [task-1] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-θών.-24 18:09:33.111 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-θών.-24 18:09:33.153 INFO  [task-1] o.h.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+2020-θών.-24 18:09:33.618 INFO  [task-1] o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-θών.-24 18:09:33.708 INFO  [restartedMain] o.s.s.w.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d07b6b, org.springframework.security.web.context.SecurityContextPersistenceFilter@6fe979b1, org.springframework.security.web.header.HeaderWriterFilter@6990e8ed, org.springframework.security.web.csrf.CsrfFilter@34dc4252, org.springframework.security.web.authentication.logout.LogoutFilter@69130f9a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@114e558d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2207a9db, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3e4f2a92, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a7cb31b, org.springframework.security.web.session.SessionManagementFilter@cc2e0e6, org.springframework.security.web.access.ExceptionTranslationFilter@49dd4a62, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@59c35376]
+2020-θών.-24 18:09:33.841 INFO  [task-1] c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2020-θών.-24 18:09:34.032 INFO  [task-1] c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2020-θών.-24 18:09:34.076 INFO  [task-1] o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-θών.-24 18:09:35.742 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-θών.-24 18:09:35.750 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-θών.-24 18:09:36.217 INFO  [task-2] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-θών.-24 18:09:36.266 INFO  [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-θών.-24 18:09:36.493 INFO  [restartedMain] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8077 (http) with context path ''
+2020-θών.-24 18:09:36.495 INFO  [restartedMain] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2020-θών.-24 18:09:36.815 INFO  [restartedMain] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2020-θών.-24 18:09:36.839 INFO  [restartedMain] c.e.d.DemoApplication - Started DemoApplication in 8.635 seconds (JVM running for 9.644)
+2020-θών.-24 18:09:42.957 INFO  [http-nio-8077-exec-1] o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-θών.-24 18:09:42.958 INFO  [http-nio-8077-exec-1] o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-θών.-24 18:09:43.016 INFO  [http-nio-8077-exec-1] o.s.w.s.DispatcherServlet - Completed initialization in 57 ms
+2020-θών.-24 18:09:43.888 INFO  [http-nio-8077-exec-3] c.e.d.c.AppController - redirecting to login page
+2020-θών.-24 18:09:44.152 WARN  [http-nio-8077-exec-3] o.a.c.u.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [220] milliseconds.
+2020-θών.-24 18:11:26.777 INFO  [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-θών.-24 18:11:26.780 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-θών.-24 18:11:26.782 INFO  [SpringContextShutdownHook] c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-θών.-24 18:11:26.793 INFO  [SpringContextShutdownHook] c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-θών.-24 18:13:09.594 INFO  [restartedMain] c.e.d.DemoApplication - Starting DemoApplication on DESKTOP-HD45276 with PID 6808 (F:\GitRepository\HospitalProjectSpring\target\classes started by Liza in F:\GitRepository\HospitalProjectSpring)
+2020-θών.-24 18:13:09.597 INFO  [restartedMain] c.e.d.DemoApplication - No active profile set, falling back to default profiles: default
+2020-θών.-24 18:13:09.645 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-θών.-24 18:13:09.645 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-θών.-24 18:13:10.344 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-θών.-24 18:13:10.421 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69ms. Found 6 JPA repository interfaces.
+2020-θών.-24 18:13:11.220 INFO  [restartedMain] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8077 (http)
+2020-θών.-24 18:13:11.231 INFO  [restartedMain] o.a.c.c.StandardService - Starting service [Tomcat]
+2020-θών.-24 18:13:11.232 INFO  [restartedMain] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-θών.-24 18:13:11.342 INFO  [restartedMain] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2020-θών.-24 18:13:11.343 INFO  [restartedMain] o.s.w.c.ContextLoader - Root WebApplicationContext: initialization completed in 1696 ms
+2020-θών.-24 18:13:11.508 INFO  [restartedMain] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-θών.-24 18:13:11.549 INFO  [task-1] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-θών.-24 18:13:11.581 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-θών.-24 18:13:11.605 INFO  [task-1] o.h.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+2020-θών.-24 18:13:11.729 INFO  [task-1] o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-θών.-24 18:13:11.810 INFO  [restartedMain] o.s.s.w.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65eacd78, org.springframework.security.web.context.SecurityContextPersistenceFilter@5c8ee3a5, org.springframework.security.web.header.HeaderWriterFilter@46ab0533, org.springframework.security.web.csrf.CsrfFilter@6e7e2d73, org.springframework.security.web.authentication.logout.LogoutFilter@5065cad3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@564b0338, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6b8bbfe9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7d63b356, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f11431b, org.springframework.security.web.session.SessionManagementFilter@6c575236, org.springframework.security.web.access.ExceptionTranslationFilter@35d2da68, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@304dcb91]
+2020-θών.-24 18:13:11.823 INFO  [task-1] c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2020-θών.-24 18:13:11.999 INFO  [task-1] c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2020-θών.-24 18:13:12.018 INFO  [task-1] o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-θών.-24 18:13:12.907 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-θών.-24 18:13:12.914 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-θών.-24 18:13:13.173 INFO  [task-2] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-θών.-24 18:13:13.208 INFO  [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-θών.-24 18:13:13.372 INFO  [restartedMain] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8077 (http) with context path ''
+2020-θών.-24 18:13:13.374 INFO  [restartedMain] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2020-θών.-24 18:13:13.608 INFO  [restartedMain] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2020-θών.-24 18:13:13.619 INFO  [restartedMain] c.e.d.DemoApplication - Started DemoApplication in 4.427 seconds (JVM running for 4.932)
+2020-θών.-24 18:13:19.366 INFO  [http-nio-8077-exec-1] o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-θών.-24 18:13:19.366 INFO  [http-nio-8077-exec-1] o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-θών.-24 18:13:19.382 INFO  [http-nio-8077-exec-1] o.s.w.s.DispatcherServlet - Completed initialization in 15 ms
+2020-θών.-24 18:13:20.011 INFO  [http-nio-8077-exec-3] c.e.d.c.AppController - redirecting to login page
+2020-θών.-24 18:13:20.260 WARN  [http-nio-8077-exec-3] o.a.c.u.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [231] milliseconds.
+2020-θών.-24 18:13:21.161 INFO  [http-nio-8077-exec-5] c.e.d.c.AppController - redirecting to login page
+2020-θών.-24 18:13:21.267 INFO  [http-nio-8077-exec-7] c.e.d.c.AppController - redirecting to login page
+2020-θών.-24 18:13:25.562 INFO  [http-nio-8077-exec-9] c.e.d.c.AppController - redirecting to doctor page
+2020-θών.-24 18:13:27.701 INFO  [http-nio-8077-exec-2] c.e.d.c.AppController - redirecting to login page
+2020-θών.-24 18:13:33.119 INFO  [http-nio-8077-exec-7] c.e.d.c.AppController - redirecting to login page
+2020-θών.-24 18:13:37.692 INFO  [http-nio-8077-exec-9] c.e.d.c.AppController - redirecting to patient page
+2020-θών.-24 18:13:42.452 INFO  [http-nio-8077-exec-2] c.e.d.c.AppController - redirecting to patient page
+2020-θών.-24 18:13:43.185 INFO  [http-nio-8077-exec-4] c.e.d.c.AppController - redirecting to login page
+2020-θών.-24 18:13:48.629 INFO  [http-nio-8077-exec-7] c.e.d.c.AppController - redirecting to doctor page
+2020-θών.-24 18:13:50.277 INFO  [http-nio-8077-exec-8] c.e.d.c.DoctorController - performing doPrescription procedure
+2020-θών.-24 18:13:50.291 INFO  [http-nio-8077-exec-8] c.e.d.s.DoctorService - performing prescriptions
+2020-θών.-24 18:13:50.298 INFO  [http-nio-8077-exec-8] c.e.d.s.DoctorService - patient SantaAnn
+2020-θών.-24 18:13:50.316 INFO  [http-nio-8077-exec-8] c.e.d.s.DoctorService - performing medicine transaction
+2020-θών.-24 18:13:50.595 INFO  [http-nio-8077-exec-10] c.e.d.c.AppController - redirecting to doctor page
+2020-θών.-24 18:13:53.245 INFO  [http-nio-8077-exec-1] c.e.d.c.DoctorController - performing findPatients procedure
+2020-θών.-24 18:13:53.247 INFO  [http-nio-8077-exec-1] c.e.d.s.DoctorService - find patients for doctor
+2020-θών.-24 18:13:53.430 INFO  [http-nio-8077-exec-2] c.e.d.c.AppController - redirecting to doctor page
+2020-θών.-24 18:13:55.863 INFO  [http-nio-8077-exec-3] c.e.d.c.DoctorController - performing establishDiagnosis procedure
+2020-θών.-24 18:13:55.864 INFO  [http-nio-8077-exec-3] c.e.d.s.DoctorService - diagnosis establishment
+2020-θών.-24 18:13:55.872 INFO  [http-nio-8077-exec-3] c.e.d.s.DoctorService - diagnosis established
+2020-θών.-24 18:13:56.003 INFO  [http-nio-8077-exec-4] c.e.d.c.AppController - redirecting to doctor page
+2020-θών.-24 18:13:59.141 INFO  [http-nio-8077-exec-6] c.e.d.c.AppController - redirecting to login page
