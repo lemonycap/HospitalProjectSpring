@@ -187,3 +187,7 @@
 2020-θών.-24 18:13:55.872 INFO  [http-nio-8077-exec-3] c.e.d.s.DoctorService - diagnosis established
 2020-θών.-24 18:13:56.003 INFO  [http-nio-8077-exec-4] c.e.d.c.AppController - redirecting to doctor page
 2020-θών.-24 18:13:59.141 INFO  [http-nio-8077-exec-6] c.e.d.c.AppController - redirecting to login page
+2020-θών.-24 18:16:41.561 INFO  [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-θών.-24 18:16:41.564 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-θών.-24 18:16:41.567 INFO  [SpringContextShutdownHook] c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-θών.-24 18:16:41.578 INFO  [SpringContextShutdownHook] c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.

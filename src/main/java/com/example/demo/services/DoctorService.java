@@ -38,13 +38,10 @@ public class DoctorService {
         List<PatientData> patientsWithoutDoctor = patientDataRepo.findPatientWithoutDoctor();
         if (patientsWithoutDoctor.size() == 0) {
             logger.info("No patients need doctor right now");
-            return null;
+            return "No patients need doctor right now";
         }
-        for (int i = 0; i< patientsWithoutDoctor.size(); i++) {
-            if (patientsWithoutDoctor.get(i).getPatientStatus() == 0) {
-                patientsWithoutDoctor.remove(patientsWithoutDoctor.get(i));
-            }
-        }
+        patientsWithoutDoctor = checkActivePatients(patientsWithoutDoctor);
+
         List<PatientData> doctorsPatients = patientDataRepo.findExistingDoctorPatients(doctorId);
         int amountOfPatients = doctorsPatients.size();
         logger.debug("doctor has got " + amountOfPatients  + " patients");
@@ -54,6 +51,15 @@ public class DoctorService {
             else return "You have max amount of patients";
 
         return null;
+    }
+
+    public List<PatientData> checkActivePatients (List<PatientData> list) {
+        for (int i = 0; i< list.size(); i++) {
+            if (list.get(i).getPatientStatus() == 0) {
+                list.remove(list.get(i));
+            }
+        }
+        return list;
     }
 
     public  void establishDiagnosis(int patientId) {
@@ -98,11 +104,17 @@ public class DoctorService {
 
     public List<Prescription> prepareActivePrescriptions(Set<Prescription> pastPrescriptions, List<Prescription> listToPrepare) {
         List<Prescription> newList = listToPrepare;
-        for (int i = 0; i < listToPrepare.size(); i++) {
-            if (pastPrescriptions.contains(listToPrepare.get(i))) {
-                newList.remove(i);
+        for (Prescription prescription : pastPrescriptions) {
+            if (listToPrepare.contains(prescription)) {
+                newList.remove(prescription);
             }
         }
+     /*   for (int i = 0; i < listToPrepare.size(); i++) {
+            boolean check = pastPrescriptions.contains(listToPrepare.get(i));
+            if (check) {
+                newList.remove(i);
+            }
+        }*/
         return newList;
     }
 

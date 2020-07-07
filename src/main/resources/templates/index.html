@@ -3,13 +3,18 @@
 <head>
     <title>Home page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{../styles/mainStyle.css}" rel="stylesheet"/>
 </head>
 <body>
+<div class = "container">
 <button  th:text = "#{registration}" onclick="location.href='/registration'"></button>
 <button  th:text = "#{doctor.profile}" onclick="location.href='/doctor'"> </button>
 <button  th:text = "#{nurse.profile}" onclick="location.href='/nurse'"></button>
 <button  th:text = "#{patient.profile}" onclick="location.href='/patient'"></button>
 <a href = "?language=en" th:value="en" th:text = "#{language.eng}"></a>
 <a href = "?language=ru" th:value="ru" th:text = "#{language.ru}"></a>
+</div>
+<h1 th:text = "#{hospital}"> </h1>
+<h3 th:text = "#{slogan}"> </h3>
 </body>
 </html>

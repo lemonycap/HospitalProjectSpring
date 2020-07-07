@@ -5,6 +5,7 @@ import org.springframework.context.annotation.*;
 import org.springframework.security.authentication.dao.*;
 import org.springframework.security.config.annotation.authentication.builders.*;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.*;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -40,7 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                    .antMatchers("/","/registration").permitAll()
+                    .antMatchers("/","/registration","/styles/*.css", "/images/*.jpg","/fonts/*.ttf").permitAll()
                     .antMatchers("/doctor/**").hasAuthority("DOCTOR")
                     .antMatchers("/patient/**").hasAuthority("PATIENT")
                     .antMatchers("/nurse/**").hasAuthority("NURSE")
@@ -54,6 +55,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .permitAll()
                 .and()
                     .exceptionHandling().accessDeniedPage("/403")
+
         ;
     }
 }

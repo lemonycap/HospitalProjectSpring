@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration</title>
+    <link rel="stylesheet" th:href="@{../styles/regStyle.css}">
 </head>
 <body>
 <div class = "container">
@@ -26,5 +27,6 @@
         <input type="submit" value="OK" name="Ok" class = "ok"><br>
     </form>
 </div>
+<button th:text = "#{home}" onclick="location.href='/'"></button>
 </body>
 </html>

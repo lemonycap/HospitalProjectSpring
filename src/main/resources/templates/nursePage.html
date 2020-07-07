@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Nurse page</title>
+    <link rel="stylesheet" th:href="@{../styles/docStyle.css}">
 </head>
 <body>
-<p th:text = "#{nurse.page}"></p>
-<form th:action="@{/logout}" method="post">
+<div class = "func">
+<button th:text="#{home}" onclick="location.href='/'" id = "home">Home</button>
+<form th:action="@{/logout}" method="post" id = "logout">
     <input type="submit" th:value="#{logout}"/>
 </form>
+</div>
+<div class = "titles">
+<p th:text = "#{nurse.page}"></p>
 <p th:utext= "#{greeting}"></p><p th:text="${nurse.name} +' ' + ${nurse.surname}"></p>
+</div>
+<div class = "container">
 <p th:utext = "#{patients}"> </p>
 <div th:if ="${!nursePatients.isEmpty()}">
     <table border = "1">
@@ -68,6 +75,6 @@
 <div th:unless ="${nursePatients.size() < 5}">
     <p th:text = "#{maxNumberOfPatients}"></p>
 </div>
-<button th:text="#{home}" onclick="location.href='/'">Home</button>
+</div>
 </body>
 </html>

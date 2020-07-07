@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Log in</title>
+    <link rel="stylesheet" th:href="@{../styles/regStyle.css}">
 </head>
 <body>
 <div class = "container">
@@ -13,7 +14,7 @@
         <input name="password"/><br><br>
         <input type="submit" th:value="#{send}" />
     </form>
-    <button th:text = "#{home}" onclick="location.href='/'"></button>
 </div>
+<button th:text = "#{home}" onclick="location.href='/'"></button>
 </body>
 </html>

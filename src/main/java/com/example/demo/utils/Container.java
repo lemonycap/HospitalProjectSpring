@@ -9,4 +9,6 @@ public interface Container {
     public static final String HARD_DIAGNOSIS = "hard";
 
     public static final String PRESCRIPTION_MEDICINE = "medicine";
+    public static final String PRESCRIPTION_PROCEDURE = "procedure";
+    public static final String PRESCRIPTION_OPERATION = "operations";
 }

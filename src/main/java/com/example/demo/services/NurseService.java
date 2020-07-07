@@ -36,13 +36,10 @@ public class NurseService {
         List<PatientData> patientsWithoutNurse = patientDataRepo.findPatientWithoutNurse();
         if (patientsWithoutNurse.size() == 0) {
             logger.info("no patients need nurse right now");
-            return null;
+            return "no patients need nurse right now";
         }
-        for (int i = 0; i< patientsWithoutNurse.size(); i++) {
-            if (patientsWithoutNurse.get(i).getPatientStatus() == 0) {
-                patientsWithoutNurse.remove(patientsWithoutNurse.get(i));
-            }
-        }
+        patientsWithoutNurse = checkActivePatients(patientsWithoutNurse);
+
         List<PatientData> nursePatients = patientDataRepo.findExistingNursePatients(nurseId);
         int amountOfPatients = nursePatients.size();
         if (amountOfPatients < MAX_AMOUNT_OF_PATIENTS) {
@@ -52,6 +49,15 @@ public class NurseService {
         else return "You have max amount of patients";
 
         return null;
+    }
+
+    public List<PatientData> checkActivePatients (List<PatientData> list) {
+        for (int i = 0; i< list.size(); i++) {
+            if (list.get(i).getPatientStatus() == 0) {
+                list.remove(list.get(i));
+            }
+        }
+        return list;
     }
 
     public void doPrescription(int id, int prescriptionId) {
