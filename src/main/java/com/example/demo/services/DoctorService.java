@@ -109,12 +109,6 @@ public class DoctorService {
                 newList.remove(prescription);
             }
         }
-     /*   for (int i = 0; i < listToPrepare.size(); i++) {
-            boolean check = pastPrescriptions.contains(listToPrepare.get(i));
-            if (check) {
-                newList.remove(i);
-            }
-        }*/
         return newList;
     }
 

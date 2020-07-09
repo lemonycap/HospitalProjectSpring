@@ -6,7 +6,7 @@ import com.example.demo.repos.PatientDataRepo;
 import com.example.demo.repos.RoleRepo;
 import com.example.demo.repos.UserRepo;
 import com.example.demo.services.PatientDataService;
-import com.example.demo.utils.Container;
+import com.example.demo.utils.InputCheckData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,21 +55,30 @@ public class AppController {
 
     @PostMapping("/registration")
     public String createUser(AppUser user, @RequestParam ("position") String position,
+                             @RequestParam ("name") String name,  @RequestParam ("surname") String surname,
+                             @RequestParam ("email") String email,  @RequestParam ("password") String password,
                              Map<String, Object> model) {
-        AppUser userFromDb = userRepo.getUserByUsername(user.getEmail());
-        if (userFromDb != null) {
-            model.put("message", "User exists!");
+        boolean isValid = InputCheckData.validInputData(name,surname,email,password);
+        if (!isValid) {
+            model.put("message", "You have entered non-valid credentials.Please,try again");
             return "registration";
         }
+        else {
+            AppUser userFromDb = userRepo.getUserByUsername(user.getEmail());
+            if (userFromDb != null) {
+                model.put("message", "User exists!");
+                return "registration";
+            }
 
-        user.setEnabled(true);
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        Role userRole = roleRepo.findByName(position.toUpperCase());
-        System.out.println(userRole);
-        user.setRole(userRole);
-        userRepo.save(user);
-        patientDataService.refreshPatients();
-        return "redirect:login";
+            user.setEnabled(true);
+            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+            Role userRole = roleRepo.findByName(position.toUpperCase());
+            System.out.println(userRole);
+            user.setRole(userRole);
+            userRepo.save(user);
+            patientDataService.refreshPatients();
+            return "redirect:login";
+        }
     }
 
     @GetMapping ("/doctor")
