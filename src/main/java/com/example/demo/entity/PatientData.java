@@ -16,15 +16,15 @@ public class PatientData implements Serializable {
     @JoinColumn(name = "patient_id", referencedColumnName = "user_id")
     private AppUser patient;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "doctor_id", referencedColumnName = "user_id")
     private AppUser doctor;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "nurse_id", referencedColumnName = "user_id")
     private AppUser nurse;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "diagnosis_id", referencedColumnName = "id_diagnosis")
     private Diagnosis diagnosis;
 
